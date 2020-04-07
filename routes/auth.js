@@ -8,6 +8,11 @@ const jwt = require ('jsonwebtoken')
 const User = require('../app/modell/Cadastro')
 const authConfig = require('../app/config/auth')
 
+router.get('/teste', async(req, res)=>{
+  res.send("Ola Mundo")
+})
+
+
 router.post('/autentica', async(req, res)=>{
   const {email, senha} = req.body;
   const user = await User.findOne({email})
@@ -24,7 +29,7 @@ router.post('/autentica', async(req, res)=>{
   user.d_nascimento = undefined
   user.rg_user = undefined
   user.cpf_user = undefined
-  
+
   res.json({ user, token});
 })
 
