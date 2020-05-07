@@ -1,17 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const bodyParser = require('body-parser')
-router.use(bodyParser.urlencoded({extended: false}))
-router.use(bodyParser.json())
 const bcrypt = require('bcryptjs');
 const jwt = require ('jsonwebtoken')
-const User = require('../app/modell/Cadastro')
-const authConfig = require('../app/config/auth')
+const User = require('../../app/modell/Cadastro')
+const authConfig = require('../../app/config/auth')
+router.use(bodyParser.urlencoded({extended: false}))
+router.use(bodyParser.json())
 
+//Rota para teste
 router.get('/teste', async(req, res)=>{
-  res.send("Ola Mundo")
+  res.json("Hello World")
 })
 
+//Rota de Autenticação Inicio//
 
 router.post('/autentica', async(req, res)=>{
   const {email, senha} = req.body;
@@ -32,5 +34,7 @@ router.post('/autentica', async(req, res)=>{
 
   res.json({ user, token});
 })
+
+//Rota de Autenticação Fim//
 
 module.exports = router

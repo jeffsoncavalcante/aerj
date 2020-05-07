@@ -15,7 +15,7 @@ const Cadastro = db.sequelize.define('usuarios',{
         unique: true
       },
       rg_user:{
-        type: db.Sequelize.DECIMAL(10)
+        type: db.Sequelize.DECIMAL(11)
       },
       d_nascimento:{
         type: db.Sequelize.STRING
@@ -33,8 +33,8 @@ const Cadastro = db.sequelize.define('usuarios',{
         type: db.Sequelize.STRING
       },
       senha:{
-        type: db.Sequelize.STRING
-      },
+        type: db.Sequelize.TEXT
+      }
     })
     Cadastro.beforeCreate((user, options) => {
 
@@ -47,6 +47,6 @@ const Cadastro = db.sequelize.define('usuarios',{
             });
     });
 
-//Cadastro.sync({force:true});
+    //Cadastro.sync({force:true});
 
-module.exports = Cadastro
+    module.exports = Cadastro

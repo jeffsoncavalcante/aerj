@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-const admin = require("./routes/admin")
-const auth = require("./routes/auth")
+const admin = require("./routes/post/admin")
+const auth = require("./routes/post/auth")
 //Rotas
 app.use('/admin', admin)
 app.use('/auth', auth )
