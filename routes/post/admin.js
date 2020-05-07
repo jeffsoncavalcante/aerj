@@ -5,6 +5,7 @@ const Cadastro = require('../../app/modell/insert/Cadastro');
 const Fornecedor = require('../../app/modell/insert/fornecedor');
 const Endereco = require('../../app/modell/insert/endereco');
 const Instituicao = require('../../app/modell/insert/instituicao');
+const Associacao = require('../../app/modell/insert/associacao');
 const authmiddlle = require('../../app/middlle/auth')
 
 //enviar json via json
@@ -35,6 +36,22 @@ router.post("/cadastro",function cadastro (req, res){
 })
 
 // Rota de cadastro Fim//
+
+// Rota de Associacao Inicio//
+router.post("/associacao", function associacao (req, res){
+  Associacao.create({
+    nome_asso: req.body.nome_asso,
+    cnpj_asso: req.body.cnpj_asso,
+    insc_municipa_asso: req.body.insc_municipa_asso
+  }).then(function(data){
+    res.json("Sucesso"+data)
+  }).catch(function(erro){
+    res.json("Erro "+ erro)
+  })
+})
+// Rota de Fornecedor Fim//
+
+
 
 // Rota de Fornecedor Inicio//
 router.post("/fornecedor", function fornecedor (req, res){
