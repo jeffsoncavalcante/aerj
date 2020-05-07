@@ -3,7 +3,7 @@ const router = express.Router();
 const bodyParser = require('body-parser')
 const bcrypt = require('bcryptjs');
 const jwt = require ('jsonwebtoken')
-const User = require('../../app/modell/Cadastro')
+const User = require('../../app/modell/insert/Cadastro')
 const authConfig = require('../../app/config/auth')
 router.use(bodyParser.urlencoded({extended: false}))
 router.use(bodyParser.json())

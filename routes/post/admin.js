@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const bodyParser = require('body-parser');
-const Cadastro = require('../../app/modell/Cadastro');
-const Fornecedor = require('../../app/modell/fornecedor');
-const Endereco = require('../../app/modell/endereco');
-const Instituicao = require('../../app/modell/instituicao');
+const Cadastro = require('../../app/modell/insert/Cadastro');
+const Fornecedor = require('../../app/modell/insert/fornecedor');
+const Endereco = require('../../app/modell/insert/endereco');
+const Instituicao = require('../../app/modell/insert/instituicao');
 const authmiddlle = require('../../app/middlle/auth')
 
 //enviar json via json

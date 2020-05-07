@@ -1,4 +1,4 @@
-const db = require ('./db')
+const db = require ('../db')
 const Fornecedor = db.sequelize.define('fornecedor',{
   Id:{
     type: db.Sequelize.INTEGER,

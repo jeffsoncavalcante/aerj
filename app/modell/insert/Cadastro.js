@@ -1,5 +1,4 @@
-const db = require ('./db')
-const user = require ('./user')
+const db = require ('../db')
 const bcrypt = require('bcryptjs');
 const Cadastro = db.sequelize.define('usuarios',{
   Id:{
