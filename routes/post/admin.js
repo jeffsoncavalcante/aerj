@@ -57,6 +57,10 @@ router.post("/instituicao", function instituicao(req, res){
     nome_inst: req.body.nome_inst,
     semestre: req.body.semestre,
     curso: curso.body.curso
+  }).then(function(data){
+    res.json("Sucesso"+data)
+  }).catch(function(erro){
+    res.json("Erro "+ erro)
   })
 })
 // Rota de Instituicao Fim//
